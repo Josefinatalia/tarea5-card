@@ -1,0 +1,201 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: "Belanosima", sans-serif;
+}
+h1, h2, h3, h4, h5, h6{
+    font-family: "Barlow", sans-serif;
+}
+:root{ /*colores parametrizados*/
+    --tono:235;
+    --complemento:47;
+
+    --color-primario: hsla(var(--tono),100%, 50%, 1);
+    --color-primario-claro: hsla(var(--tono), 100%, 90%, 1);
+    --color-blanco: hsla(var(--tono), 100%, 100%, 1);
+    --color-primario-medio: hsla(var(--tono), 100%, 75%, 1);
+    --color-primario-oscuro: hsla(var(--tono), 100%, 10%,1);
+
+    --color-complemento: hsla(var(--complemento), 100%, 30%, 1);
+}
+.card{
+    background-color: hsla(var(--tono), 100%, 95%, 1);
+    margin: 40px;
+    padding: 40px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    box-shadow:0 0 10px hsla(var(--tono), 100%, 75%, 1);
+
+    animation-name: flotar;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+    @keyframes flotar{
+        0% {transform: translateY(0px);}
+        50% {transform: translateY(15px);}
+        100% {transform: translateY(0px);}
+    }
+
+img{
+    width: 420px;
+    height: 420px;
+    object-fit: cover;
+    border-radius: 250px;
+}
+    
+.info{
+        
+    display: grid;
+    text-align: justify;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-gap: 1rem;
+
+    .info-content{
+        padding: 20px;
+        text-align: justify;
+        display: grid;
+        place-items: center;
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    h1{
+        font-size: 26px;
+        text-align: center;
+        color: hsla(var(--tono), 100%, 10%,1);
+        grid-row: 1/1;
+        grid-column: 1/5;
+    }
+    p{
+        font-size: 18px;
+        text-align: justify;
+        justify-content: center;
+        padding: 10px;
+        color: hsla(var(--tono), 100%, 10%,1);
+        grid-row: 2/3;
+        grid-column: 1/5;
+    }
+        
+}
+.boton{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+.boton i{
+    background-color: hsla(var(--tono), 100%, 10%,1);
+    color: hsla(var(--tono), 100%, 100%, 1);
+    a{ color: hsla(var(--tono), 100%, 100%, 1);}
+    flex-direction:row;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    padding-right: 50px;
+    padding-left: 50px;
+    border-radius: 20px;
+    transition: 0.2s ease-in-out;
+        
+}
+
+.boton i:hover{
+    background-color: hsla(var(--complemento), 100%, 40%, 1);
+}
+
+
+/*Responsibidad*/
+ @media screen and (min-width: 764px) {
+    .card{
+        flex-direction: row;
+        max-width: 1024px;
+        gap: 20px;
+    }
+    img{
+        width: 50%;
+        height: 50%;
+    }
+    .info{
+        align-items: flex-start;
+        grid-template-columns: 1fr, 1fr;
+        text-align: left;
+    }
+    h1{
+        font-size: 34px;
+    }
+    p{
+        font-size: 26px;
+    }
+    .boton{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+    .boton i{
+        display: flex;
+        flex-direction: row;
+    }
+ }
+ @media screen and (min-width: 1024px) {
+    .card{
+        max-width: 1440px;
+    }
+    img{
+        width: 30%;
+    }
+    .info{
+        align-items:auto;
+    }
+    h1{
+        font-size: 42px;
+    }
+    p{
+        font-size: 34px;
+    }
+    .boton{
+        display: flex;
+        flex-direction: row;
+        justify-content:space-evenly;
+    }
+    .boton i{
+        display: flex;
+        flex-direction: row;
+    }
+ }
+ @media screen and (min-width: 1440px) {
+    .card{
+        max-width: 1750px;
+        padding: 60px 100px;
+    }
+    img{
+        width: 30%;
+    }
+    .info-content{
+        gap: 34px;
+        grid-column: span 2;
+        align-items:flex-start;
+    }
+    h1{
+        font-size: 64px;
+    }
+    p{
+        font-size: 56px;
+    }
+    .boton{
+        display: flex;
+        flex-direction: row;
+        justify-content:space-evenly;
+    }
+    .boton i{
+        font-size: 20px;
+    }
+ }
+
+ 
